@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.parse.ParseUser;
 
@@ -22,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
             navigateToLogin();
         }
         else {
-            Log.i(TAG, currentUser.getUsername());
+            //Toast.makeText(this, ""+currentUser.getUsername(), Toast.LENGTH_LONG).show();
+            Log.i("Current user name", currentUser.getUsername());
         }
 
 
