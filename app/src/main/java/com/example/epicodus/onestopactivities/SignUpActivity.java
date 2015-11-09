@@ -16,14 +16,18 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class SignUpActivity extends Activity {
 
-    protected EditText mUserName;
-    protected EditText mPassword;
-    protected EditText mEmail;
-    protected Button mSignUpButton;
-    protected RadioButton mStudentRadioButton;
-    protected RadioButton mTeacherRadioButton;
+    @Bind(R.id.studentRadioButton) RadioButton mStudentRadioButton;
+    @Bind(R.id.teacherRadioButton) RadioButton mTeacherRadioButton;
+    @Bind(R.id.userName) EditText mUserName;
+    @Bind(R.id.password) EditText mPassword;
+    @Bind(R.id.email) EditText mEmail;
+    @Bind(R.id.signUpButton) Button mSignUpButton;
+
     protected String mLoginType;
 
 
@@ -31,14 +35,8 @@ public class SignUpActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        ButterKnife.bind(this);
 
-
-        mStudentRadioButton = (RadioButton) findViewById(R.id.studentRadioButton);
-        mTeacherRadioButton = (RadioButton) findViewById(R.id.teacherRadioButton);
-        mUserName = (EditText) findViewById(R.id.userName);
-        mPassword = (EditText) findViewById(R.id.password);
-        mEmail = (EditText) findViewById(R.id.email);
-        mSignUpButton = (Button) findViewById(R.id.signUpButton);
 
         mSignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override

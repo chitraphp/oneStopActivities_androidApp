@@ -12,22 +12,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class LoginActivity extends AppCompatActivity {
     private SharedPreferences mPreferences;
 
-    private Button mSignUpTextView;
-    private Button mAsStudentLoginButton;
-    private  Button mAsTeacherLoginButton;
+    @Bind(R.id.signUpText) Button mSignUpTextView;
+    @Bind(R.id.asStudentLogin) Button mAsStudentLoginButton;
+    @Bind(R.id.asTeacherLogin) Button mAsTeacherLoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
         mPreferences = getApplicationContext().getSharedPreferences("twitter", Context.MODE_PRIVATE);
-        mSignUpTextView = (Button) findViewById(R.id.signUpText);
-        mAsStudentLoginButton = (Button) findViewById(R.id.asStudentLogin);
-        mAsTeacherLoginButton = (Button) findViewById(R.id.asTeacherLogin);
 
         mSignUpTextView.setOnClickListener(new View.OnClickListener() {
             @Override

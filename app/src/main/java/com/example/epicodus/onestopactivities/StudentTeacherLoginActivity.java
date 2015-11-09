@@ -15,21 +15,21 @@ import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class StudentTeacherLoginActivity extends Activity {
 
-    protected EditText mUserName;
-    protected EditText mPassword;
-    protected Button mLoginButton;
+    @Bind(R.id.userName) EditText mUserName;
+    @Bind(R.id.password) EditText mPassword;
+    @Bind(R.id.signInButton) Button mLoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(getWindow().FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_student_teacher_login);
-
-        mUserName = (EditText) findViewById(R.id.userName);
-        mPassword = (EditText) findViewById(R.id.password);
-        mLoginButton = (Button) findViewById(R.id.signInButton);
+        ButterKnife.bind(this);
 
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
