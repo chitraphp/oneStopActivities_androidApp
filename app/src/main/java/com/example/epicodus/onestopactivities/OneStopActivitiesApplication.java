@@ -16,9 +16,9 @@ public class OneStopActivitiesApplication extends Application {
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "2BIKvLgIZufqNghnOH0oVDdIFj7qf9pTGHUkgi8u", "1qHH6iMDyKXYdkHmhXdC5fQVGnJT0zUu4eTaXGH3");
 
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
+//        ParseObject testObject = new ParseObject("TestObject");
+//        testObject.put("foo", "bar");
+//        testObject.saveInBackground();
 
     }
 }

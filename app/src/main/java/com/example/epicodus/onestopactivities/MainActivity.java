@@ -23,6 +23,20 @@ public class MainActivity extends AppCompatActivity {
             navigateToLogin();
         }
         else {
+
+            String userType = currentUser.getString("type");
+            Toast.makeText(this, userType, Toast.LENGTH_LONG).show();
+            if (userType == "Teacher") {
+                Intent intent = new Intent(this, TeacherActivity.class);
+                startActivity(intent);
+            }
+
+            else {
+                Intent intent = new Intent(this, StudentActivity.class);
+                startActivity(intent);;
+            }
+
+
             //Toast.makeText(this, ""+currentUser.getUsername(), Toast.LENGTH_LONG).show();
             Log.i("Current user name", currentUser.getUsername());
         }
